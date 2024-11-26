@@ -12,16 +12,16 @@ bitflags! {
     }
 }
 
-pub struct Uf2Block {
+pub(crate) struct Uf2Block {
     magic_start0: u32,
     magic_start1: u32,
     flags: UF2Flags,
-    target_addr: u32,
-    payload_size: u32,
+    pub(crate) target_addr: u32,
+    pub(crate) payload_size: u32,
     block_num: u32,
     num_blocks: u32,
     family_id: u32, // Also fileSize
-    data: [u8; 476],
+    pub(crate) data: [u8; 476],
     magic_end: u32
 }
 

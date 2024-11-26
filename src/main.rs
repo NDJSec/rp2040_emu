@@ -27,6 +27,7 @@ fn main() -> io::Result<()> {
     }
 
     let mut rp2040 = RP2040::new();
+    rp2040.write_flash(uf2_file);
     rp2040.start_emulation();
 
     Ok(())
